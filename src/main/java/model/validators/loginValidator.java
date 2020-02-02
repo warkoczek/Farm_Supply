@@ -1,6 +1,7 @@
-package model;
+package model.validators;
 
 import db.DBConnection;
+import db.repositories.UserRepositoryImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,6 +18,8 @@ import java.sql.*;
 
 @WebServlet("/loginValidator")
 public class loginValidator extends HttpServlet {
+
+    UserRepositoryImpl userRepository = new UserRepositoryImpl();
 
 
     public loginValidator() {
@@ -43,17 +46,18 @@ public class loginValidator extends HttpServlet {
         boolean exists = isPresent(login1,passToMD5,dbUser,dbPass);
 
         if(exists == false){
-            resp.sendRedirect("createAccount.jsp");
-            out.print("Your pass md5: " + passToMD5);
+             resp.sendRedirect("createAccount.jsp");
+
 
         }else{
+            HttpSession session = req.getSession();
+            session.setAttribute("user",login1);
+            session.setMaxInactiveInterval(60);
             resp.sendRedirect("products.jsp");
         }
 
         //zmienne sesyjne
-        HttpSession session = req.getSession();
-        session.setAttribute("user",login1);
-        session.setMaxInactiveInterval(60);
+
 
 
 
@@ -73,11 +77,14 @@ public class loginValidator extends HttpServlet {
                 isAvailable = false;
             }
 
+
         }catch(ClassNotFoundException | SQLException e){
             System.out.println("Exception: " + e.getMessage());
 
         }
+
         return isAvailable;
+
     }
 
     private String createMD5(String password1) {

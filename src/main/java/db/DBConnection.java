@@ -12,7 +12,7 @@ public class DBConnection {
         Connection conn = null;
 
         String dbDriver = "com.mysql.jdbc.Driver";
-        String dbURL = "jdbc:mysql://localhost:3306/" + dbname + "?serverTimezone=UTC&allowPublicKeyRetrieval=true";
+        String dbURL = "jdbc:mysql://localhost:3306/" + dbname + "?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
         Class.forName(dbDriver);
         conn = DriverManager.getConnection(dbURL,user,password);
 

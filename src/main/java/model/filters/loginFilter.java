@@ -1,4 +1,4 @@
-package model;
+package model.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

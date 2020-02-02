@@ -42,7 +42,7 @@
 
 <h1>Create new account: </h1>
 
-<form action="loginValidator" method = "post">
+<form action="newLoginValidator" method = "post">
     <br>
     Choose your login:<br>
     <input type = "text" class="textBox" name = "user" value = "${loginValue}">

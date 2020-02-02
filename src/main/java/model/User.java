@@ -7,33 +7,19 @@ public class User {
     private Long id;
     private String login;
     private String password;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String street;
-    private String postcode;
-    private String city;
+    private UserAddress uAddress;
+
 
     public User() {
     }
 
-    public User(Long id, String login, String password) {
+    public User(Long id, String login, String password, UserAddress uAddress) {
         this.id = id;
         this.login = login;
         this.password = password;
+        this.uAddress = uAddress;
     }
 
-    public User(Long id, String login, String password, String email, String firstName, String lastName, String street, String postcode, String city) {
-        this.id = id;
-        this.login = login;
-        this.password = password;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.street = street;
-        this.postcode = postcode;
-        this.city = city;
-    }
 
     public Long getId() {
         return id;
@@ -59,53 +45,10 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
+    public UserAddress getUAddress(){return uAddress;}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public void setUAddress(UserAddress userAddress){this.uAddress=userAddress;}
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getPostcode() {
-        return postcode;
-    }
-
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
 
     @Override
     public boolean equals(Object o) {

@@ -34,13 +34,13 @@
 
 
         <ul class = "navigation">
-
+            <a href="fertilizers.jsp"><li>Fertilizer</li></a>
+            <a href="pesticides.jsp"><li>Pesticide</li></a>
+            <a href="createAccount.jsp"><li>Sign up</li></a>
             <a href="login.jsp"><li>Login</li></a>
             <a><li><%=user%></li></a>
             <a href="showBasket.jsp"><li>Basket</li></a>
-            <a href="createAccount.jsp"><li>Create account</li></a>
-            <a href="fertilizers.jsp"><li>Fertilizer</li></a>
-            <a href="pesticides.jsp"><li>Pesticide</li></a>
+
 
         </ul>
 

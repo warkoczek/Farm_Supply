@@ -1,4 +1,4 @@
-package model;
+package model.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -7,7 +7,7 @@ import java.beans.Statement;
 import java.io.IOException;
 import java.sql.ResultSet;
 
-@WebFilter("/loginValidator")
+@WebFilter({"/newLoginValidator", "/loginValidator"})
 public class newPasswordFilter implements Filter {
 
     @Override
